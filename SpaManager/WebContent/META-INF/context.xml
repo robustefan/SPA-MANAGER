@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path = '/SpaManager'>
+	<Resource name="jdbc/myDb" auth="Container" type="javax.sql.DataSource"
+		username="spaUser" password="spaPassword" driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://82.76.115.105:3306/spa1" maxActive="15" maxIdle="4" />
+</Context>
