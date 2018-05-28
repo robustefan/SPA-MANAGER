@@ -49,37 +49,53 @@ public class Checkout extends HttpServlet {
 				java.sql.Connection con = dbRes.getConnection();
 				PreparedStatement ps = con.prepareStatement("SELECT * FROM CLIENTI WHERE id = ?");
 				PreparedStatement ps1 = con.prepareStatement("SELECT produsCumparat,pretProdus FROM SERVICES WHERE id_client = ?");
+				PreparedStatement ps3 = con.prepareStatement("SELECT SUM(pretProdus) FROM SERVICES WHERE id_client = ?");
 				PrintWriter out = response.getWriter()
 		   )
 		{
 			ps.setInt(1, Integer.parseInt(request.getParameter("idClient")));
+			ps3.setInt(1, Integer.parseInt(request.getParameter("idClient")));
 			
 			 try(ResultSet rs = ps.executeQuery())
 	           {
 	        	   if(rs.next())
 	        	   {
+	        		   
 	        		   ps1.setInt(1, Integer.parseInt(request.getParameter("idClient")));
 	        		   
-	        		   try(ResultSet rs1 = ps1.executeQuery())
+	        		   try(
+	        				   ResultSet rs1 = ps1.executeQuery();
+	        				   ResultSet rs3 = ps3.executeQuery()
+	        				   
+	        		  	  )
 	        		   {
-	        			   
+	        			   request.getRequestDispatcher("checkout.jsp").include(request, response);
 	        			   out.println("<h1>Clientul cu id-ul " + request.getParameter("idClient") + " a solicitat serviciile :</h1><br>");
 	        			   int x = 0;
 	        			   
 	        			   while(rs1.next())
 	        			   {
-	        				   out.println(rs1.getString(1) + rs1.getString(2) + "<br>");
+	        				   out.println("<h3>" + rs1.getString(1) + " : " + rs1.getString(2) + " LEI <br></h3>");
 	        				   x++;
 	        			   }
 	        			   if(x == 0)
+	        			   {	
+	        				   out.println("<h1>Niciun serviciu</h1><br>");
+	        				   out.println("<h3>Credit ramas : " + rs.getDouble("credit") + "</h3><br>");
+	        			   }
+	        			   else
 	        			   {
-	        				   out.println("<h1>Clientul cu id-ul" + request.getParameter("idClient") + "nu a solicitat niciun serviciu :</h1><br><br><br>");
+	        				   if(rs3.next())
+	        					   {
+	        					   		out.println("<h3>Total :     " + rs3.getDouble(1) + " LEI</h3></br>");	        					   
+	        					   		out.println("<h3>Credit ramas : " + rs.getDouble("credit") + "</h3><br>");
+	        					   }
 	        			   }
 	        		   }
 	        	   }
 	        	   else
 	        	   {
-	        		   request.getRequestDispatcher("Checkout.jsp").include(request, response);
+	        		   request.getRequestDispatcher("checkout.jsp").include(request, response);
 		               response.getWriter().println("<h1>ID Invalid!</h1>");           
 	        	   }
 	           }

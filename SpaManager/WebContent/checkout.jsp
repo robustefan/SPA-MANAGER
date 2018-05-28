@@ -15,6 +15,9 @@
 			fot-weight: bold;
 			text-align: center;
 		}
+		h3{
+		text-align: center;
+		}
 		p {
 			font-size: 3vh;
 			text-align: center;
