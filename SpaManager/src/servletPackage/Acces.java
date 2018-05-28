@@ -45,13 +45,13 @@ public class Acces extends HttpServlet {
 	        int idC = Integer.parseInt(request.getParameter("IDClient"));
 	        String zonaDorita = request.getParameter("zona");
 	        
-	        if (idC>=1 && idC<=1000) {
+	        if (idC >= 1 && idC <= 1000) {
 	        	
 	        	if(zonaDorita.equals("A") || zonaDorita.equals("B") || zonaDorita.equals("C")) {
 	              try(PreparedStatement ps2 = con.prepareStatement("UPDATE TABLE CLIENTI SET zona_curenta = ? WHERE id = ?");){
 	            	  
-	            	  ps2.setString(1, request.getParameter("zona"));
-	            	  ps2.setInt(2, Integer.parseInt(request.getParameter("IDClient")));
+	            	  ps2.setString(1, zonaDorita);
+	            	  ps2.setInt(2, idC);
 	            	  int succes = ps2.executeUpdate();
 	            	  /*request.getRequestDispatcher("zoneAcces.jsp").include(request, response);
 	              	  if (succes> 0)
