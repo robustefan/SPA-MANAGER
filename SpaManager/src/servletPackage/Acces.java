@@ -53,8 +53,8 @@ public class Acces extends HttpServlet {
 	            	  ps2.setString(1, zonaDorita);
 	            	  ps2.setInt(2, idC);
 	            	  int succes = ps2.executeUpdate();
-	            	  /*request.getRequestDispatcher("zoneAcces.jsp").include(request, response);
-	              	  if (succes> 0)
+	            	  request.getRequestDispatcher("zoneAcces.jsp").include(request, response);
+	              	  if (succes > 0)
 	              	  {
 	              		PrintWriter out = response.getWriter();
 	              		out.print("<h1>Zona modificata</h1>");
@@ -62,10 +62,7 @@ public class Acces extends HttpServlet {
 	              	  else {
 	              		PrintWriter out = response.getWriter();
 	            		out.print("<h1>Eroare</h1>");
-	              	  }*/
-	            	  
-	            	  PrintWriter out = response.getWriter();
-	              		out.print(idC + zonaDorita);
+	              	  }
 	              }
 	              catch (Exception ex) {
 	            	  PrintWriter out = response.getWriter();
@@ -150,7 +147,7 @@ public class Acces extends HttpServlet {
 	        if (idC>=3001 && idC<=4000) {
 	        	
 	        	if(zonaDorita.equals("D") || zonaDorita.equals("E") || zonaDorita.equals("F")) {
-	                try(PreparedStatement ps2=con.prepareStatement("UPDATE TABLE CLIENTI SET zona_curenta=? WHERE id=?");){
+	                try(PreparedStatement ps2=con.prepareStatement("UPDATE CLIENTI SET zona_curenta=? WHERE id=?");){
 	              	  
 	              	  ps2.setString(1, zonaDorita);
 	              	  ps2.setInt(2, idC);
@@ -185,12 +182,6 @@ public class Acces extends HttpServlet {
 	        Logger.getLogger(Acces.class.getName()).log(Level.SEVERE, null, ex);
 	    }
 				
-		/*
-    	PrintWriter out = response.getWriter();
-
-        request.getRequestDispatcher("zoneAcces.jsp").include(request, response);
-        out.print("<h1>Clientul nu are acces in zona selectata</h1>");
-        out.close();*/
 	}
 
 	/**
