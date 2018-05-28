@@ -121,11 +121,16 @@ public class ClientCumpara extends HttpServlet {
 		               
 	        	   }
 	           }
+	           catch(Exception ex)
+	           {
+	        	   request.getRequestDispatcher("clientCumpara.jsp").include(request, response);
+	               response.getWriter().println("<h1>Cumparare esuata!</h1>");
+	           }
 		} 
 		catch (SQLException e) 
 		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			request.getRequestDispatcher("clientCumpara.jsp").include(request, response);
+            response.getWriter().println("<h1>Cumparare esuata!</h1>");
 		}
 		
 		doGet(request, response);

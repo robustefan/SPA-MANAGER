@@ -99,10 +99,16 @@ public class Checkout extends HttpServlet {
 		               response.getWriter().println("<h1>ID Invalid!</h1>");           
 	        	   }
 	           }
+			 catch(Exception ex)
+			 {
+				 	request.getRequestDispatcher("checkout.jsp").include(request, response);
+	                response.getWriter().println("<h1>Checkout esuat!</h1>");           
+			 }
 		} 
 		catch (SQLException e) 
 		{	
-			e.printStackTrace();
+			request.getRequestDispatcher("checkout.jsp").include(request, response);
+            response.getWriter().println("<h1>Checkout esuat!</h1>");  
 		}
 		
 		

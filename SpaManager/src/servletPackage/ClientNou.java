@@ -168,7 +168,7 @@ public class ClientNou extends HttpServlet {
 	        		   
 	        	   }
 	           }
-	           catch(SQLException ex)
+	           catch(Exception ex)
 	           {
 	        	   request.getRequestDispatcher("clientNou.jsp").include(request, response);
     			   response.getWriter().println("<h1>Introducere esuata!</h1>");
