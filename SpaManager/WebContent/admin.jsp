@@ -27,9 +27,9 @@
         <div class="text-center">
             <h1> Manager SPA </h1><br><br><br><br><br><br><br><br><br><br>
             <p> Optiuni: </p> <br> <br> <br>
-            <a href="comutaClient.jsp"  class="btn btn-success">Schimbati starea unui client!</a>
+            <a href="nrClienti.jsp"  class="btn btn-success">Vezi numar clienti din zone SPA!</a>
             <a href="clientNou.jsp" class="btn btn-warning">Introduceti un nou client!</a>
-            <a href="ZoneAcces.jsp" class="btn btn-danger">Vezi clienti din zone SPA!</a>
+            <a href="zoneAcces.jsp" class="btn btn-danger">Schimbati starea unui client!</a>
             <br><br><br>
             <a href="clientCumpara.jsp" class="btn btn-warning">Selectati serviciile dorite de client!</a>
             <a href="checkout.jsp" class = "btn btn-danger">Checkout</a>

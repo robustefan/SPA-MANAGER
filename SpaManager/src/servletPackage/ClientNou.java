@@ -62,7 +62,7 @@ public class ClientNou extends HttpServlet {
 	        	   if(rs.next())
 	        	   {
 		                request.getRequestDispatcher("clientNou.jsp").include(request, response);
-		                out.print("<h1>Clientul introdus se afla deja in Spa</h1>");
+		                out.print("<h3>Clientul introdus se afla deja in Spa</h3>");
 		                out.close();
 	        	   }
 	        	   else
@@ -139,7 +139,7 @@ public class ClientNou extends HttpServlet {
 	        			   	catch(SQLException ex)
 	        			   	{
 	        			   		request.getRequestDispatcher("clientNou.jsp").include(request, response);
-	        					response.getWriter().println("<h1>Introducere esuata!</h1>");
+	        					response.getWriter().println("<h3>Introducere esuata!</h3>");
 	        			   	}
 	        			   	
 	        			  
@@ -153,9 +153,9 @@ public class ClientNou extends HttpServlet {
 	        		    request.getRequestDispatcher("clientNou.jsp").include(request, response);
 	    	        			 
 	    	            if(success > 0)
-	    	                  out.println("<h1>Clientul introdus cu succes!</h1>");
+	    	                  out.println("<h3>Clientul introdus cu succes!</h3>");
 	    	            else
-	    	                  out.println("<h1>Introducere esuata!</h1>");
+	    	                  out.println("<h3>Introducere esuata!</h3>");
 
 	        				   
 	        			   
@@ -163,7 +163,7 @@ public class ClientNou extends HttpServlet {
 	        		   catch(SQLException ex)
 	        		   {
 	        			   request.getRequestDispatcher("clientNou.jsp").include(request, response);
-	        			   response.getWriter().println("<h1>Introducere esuata!</h1>");
+	        			   response.getWriter().println("<h3>Introducere esuata!</h3>");
 	        		   }
 	        		   
 	        	   }

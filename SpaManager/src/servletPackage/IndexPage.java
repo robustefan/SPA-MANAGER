@@ -72,7 +72,7 @@ public class IndexPage extends HttpServlet {
 	                PrintWriter out = response.getWriter();
 
 	                request.getRequestDispatcher("index.jsp").include(request, response);
-	                out.print("<h1>Username sau parola incorecte!</h1>");
+	                out.print("<h3>Username sau parola incorecte!</h3>");
 	                out.close();
 	            }
 	           }
@@ -81,7 +81,7 @@ public class IndexPage extends HttpServlet {
 	        	   PrintWriter out = response.getWriter();
 
 	               request.getRequestDispatcher("index.jsp").include(request, response);
-	               out.print("<h1>Username sau parola incorecte!</h1>");
+	               out.print("<h3>Username sau parola incorecte!</h3>");
 	               out.close();
 	           }
 	        }

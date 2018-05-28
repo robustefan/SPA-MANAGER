@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Spa manger - Zone Acces</title>
+		<title>Spa manger - Nr Clienti</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<style>
@@ -25,14 +25,17 @@
 <div class="text-center">
 	        <h1>Manager SPA</h1>
 			<br> <br> <br> <br> <br> 
-			<p>Introduceti ID-ul clientului si apoi selectati zona in care doriti sa il trimiteti (A-F): </p> <br>
-			<form action="Acces" method="get">
-	              <br> ID Client:<br> <input type="text" name="IDClient" >
+			<p>Selectati zona pentru care doriti sa vedeti numarul de clienti (A-F): </p> <br>
+			<form action="NrClienti" method="get">
+	              
 	              <br> Zona(A-F):<br> <input type="text" name="zona" pattern="[A-Z]{1}" title="Zona (A-F)">
 	              <br><br><input type="submit" class="btn btn-success" value="Introduceti">
 			</form>
 	    
 		</div>
+
+
+
 
 </body>
 </html>
