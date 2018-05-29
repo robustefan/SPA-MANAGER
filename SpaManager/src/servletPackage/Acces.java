@@ -58,10 +58,12 @@ public class Acces extends HttpServlet {
 	              	  {
 	              		PrintWriter out = response.getWriter();
 	              		out.print("<h3>Zona modificata</h3>");
+	              		out.close();
 	              	  }
 	              	  else {
 	              		PrintWriter out = response.getWriter();
 	            		out.print("<h3>Eroare</h3>");
+	            		out.close();
 	              	  }
 	              }
 	              catch (Exception ex) {
@@ -97,10 +99,12 @@ public class Acces extends HttpServlet {
 	              	  	{
 	              	  		PrintWriter out = response.getWriter();
 	              	  		out.print("<h3>Zona modificata</h3>");
+	              	  		out.close();
 	              	  	}
 	              	  	else {
 	              	  		PrintWriter out = response.getWriter();
 	              	  		out.print("<h3>Eroare</h3>");
+	              	  		out.close();
 	              	  	}
 	                }	
 	        	}
@@ -127,10 +131,13 @@ public class Acces extends HttpServlet {
 	              	  {
 	              		PrintWriter out = response.getWriter();
 	              		out.print("<h3>Zona modificata</h3>");
+	              		out.close();
 	              	  }
 	              	 else {
 	              		 PrintWriter out = response.getWriter();
-	              		 out.print("<h3>Eroare</h3>");}
+	              		 out.print("<h3>Eroare</h3>");
+	              		 out.close();	 
+	              	 }
 	                }
 	            }
 	          	else 
@@ -157,9 +164,14 @@ public class Acces extends HttpServlet {
 	             	  {
 	             		PrintWriter out = response.getWriter();
 	             		out.print("<h3>Zona modificata</h3>");
+	             		out.close();
 	             	  }
-	             	 else {PrintWriter out = response.getWriter();
-	         		out.print("<h3>Eroare</h3>");}
+	             	 else {
+	             		 PrintWriter out = response.getWriter();
+	             		 out.print("<h3>Eroare</h3>");
+	             		out.close();	 
+	             	 }
+	             	  	 
 	                }
 	        	}
 	          	else {
